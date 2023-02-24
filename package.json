@@ -1,0 +1,14 @@
+{
+  "name": "provider-sqs-pact-example",
+  "version": "1.0.0",
+  "description": "An example on how to use contract based development with pact",
+  "main": "src/index.js",
+  "repository": "https://github.com/indrabasak/provider-sqs-pact-example.git",
+  "author": "indra.basak1@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1322.0",
+    "lambda-api": "^0.12.0",
+    "serverless-deployment-bucket": "^1.6.0"
+  }
+}
