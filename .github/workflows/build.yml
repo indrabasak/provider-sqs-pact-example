@@ -24,9 +24,9 @@ jobs:
         with:
           node-version: '18'
       - name: Install
-        run: npm i
+        run: yarn install
       - name: Test
-        run: GIT_BRANCH=${GITHUB_REF:11} npm test
+        run: GIT_BRANCH=${GITHUB_REF:11} yarn test
 
   # Runs on branches as well, so we know the status of our PRs
   can-i-deploy:
