@@ -5,6 +5,9 @@
   "repository": "https://github.com/indrabasak/provider-sqs-pact-example.git",
   "author": "indra.basak1@gmail.com",
   "license": "MIT",
+  "scripts": {
+    "test": "jest --testTimeout 30000  book.pact.test.js"
+  },
   "devDependencies": {
     "@pact-foundation/pact": "^10.4.1",
     "@pact-foundation/pact-node": "^10.17.7",
