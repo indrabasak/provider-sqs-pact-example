@@ -10,6 +10,7 @@ class BookService {
     await this.sendMessage(book);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   async sendMessage(message) {
     const params = {
       MessageBody: JSON.stringify(message),
