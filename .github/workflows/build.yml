@@ -8,7 +8,7 @@ on:
 
 # Setup environment variables
 env:
-  PACT_BROKER_BASE_URL: https://test.pactflow.io
+  PACT_BROKER_BASE_URL: https://pqr.pactflow.io
   PACT_BROKER_TOKEN: ${{ secrets.PACTFLOW_TOKEN }}
   PACT_BROKER_PUBLISH_VERIFICATION_RESULTS: true
   GIT_COMMIT: ${{ github.sha }}
