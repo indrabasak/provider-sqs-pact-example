@@ -1,0 +1,25 @@
+Resources:
+  BookQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: ${self:service}-book-queue
+      KmsMasterKeyId: "alias/aws/sqs"
+      VisibilityTimeout: 300
+      Tags:
+        - Key: 'adsk:moniker'
+          Value: ${self:custom.config.moniker}
+
+  BookQueuePolicy:
+    Type: AWS::SQS::QueuePolicy
+    Properties:
+      Queues: [!Ref BookQueue]
+      PolicyDocument:
+        Statement:
+          - Sid: book-queue-send-message
+            Action:
+              - "SQS:SendMessage"
+            Effect: "Allow"
+            Resource: !GetAtt BookQueue.Arn
+            Principal:
+              AWS:
+                - ${aws:accountId}

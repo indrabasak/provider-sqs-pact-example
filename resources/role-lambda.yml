@@ -73,3 +73,13 @@ Resources:
                 Action:
                   - cloudwatch:DescribeAlarms
                 Resource: '*'
+
+        - PolicyName: ${self:service}-provider-sqs-example-sqs
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - sqs:*
+                Resource:
+                  - Fn::GetAtt: [BookQueue, Arn]
