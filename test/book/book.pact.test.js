@@ -2,7 +2,7 @@
 require('dotenv').config();
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { MessageProviderPact } = require('@pact-foundation/pact');
-const { Book } = require('../../src/book/book');
+const { bookFromJson } = require('../../src/book/book');
 
 describe('Message provider tests', () => {
   const baseOpts = {
@@ -28,14 +28,14 @@ describe('Message provider tests', () => {
     enablePending: true
   };
 
-  const book = new Book(null, 'Test Book', 'John Doe');
+  const book = bookFromJson({ title: 'Test Book', author: 'John Doe' });
   console.log(book);
 
   const opts = {
     ...baseOpts,
     ...(process.env.PACT_URL ? pactChangedOpts : fetchPactsDynamicallyOpts),
     messageProviders: {
-      'a new book creation': () => book
+      'a book event update': () => book
     }
   };
 
