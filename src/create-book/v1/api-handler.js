@@ -1,4 +1,4 @@
-const { BookService } = require('./book-service');
+const { BookService } = require('../../book/book-service');
 
 const service = new BookService();
 

@@ -1,0 +1,6 @@
+Outputs:
+    BookQueue:
+      Description: A reference to the example book queue
+      Value: !GetAtt BookQueue.Arn
+      Export:
+        Name: BookQueueArn

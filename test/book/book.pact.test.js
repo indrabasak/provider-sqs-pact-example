@@ -2,7 +2,7 @@
 require('dotenv').config();
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { MessageProviderPact } = require('@pact-foundation/pact');
-const { Book } = require('../../src/book/v1/book');
+const { Book } = require('../../src/book/book');
 
 describe('Message provider tests', () => {
   const baseOpts = {

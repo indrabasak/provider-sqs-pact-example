@@ -34,10 +34,11 @@ package:
 functions:
   create-book:
     name: ${self:service}-book-provider
-    handler: src/book/index.handler
+    handler: src/create-book/index.handler
     package:
       include:
         - src/book/**
+        - src/create-book/**
     memorySize: 512
     timeout: 300
     reservedConcurrency: 5
@@ -60,6 +61,7 @@ resources:
   - ${file(resources/securitygroup-lambda.yml)}
   - ${file(resources/role-lambda.yml)}
   - ${file(resources/queue-book.yml)}
+  - ${file(resources/outputs.yml)}
 
 plugins:
   - serverless-deployment-bucket
