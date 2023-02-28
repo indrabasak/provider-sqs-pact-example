@@ -27,7 +27,7 @@ jobs:
       - name: Install
         run: npm i
       - name: Test
-        run: make test
+        run: GIT_BRANCH make test
 
   # Runs on branches as well, so we know the status of our PRs
   can-i-deploy:
