@@ -40,20 +40,6 @@ describe('Message provider tests', () => {
   };
 
   const pact = new MessageProviderPact(opts);
-  // const messagePact = new MessageProviderPact({
-  //   messageProviders: {
-  //     "a hero created message": () =>
-  //       CreateHeroEventProducer.produceHeroCreatedEvent()
-  //   },
-  //   log: path.resolve(process.cwd(), "logs", "pact.log"),
-  //   logLevel: "info",
-  //   provider: "node-message-provider",
-  //   pactBrokerUrl: "https://test.pact.dius.com.au/",
-  //   pactBrokerUsername: "dXfltyFMgNOFZAxr8io9wJ37iUpY42M",
-  //   pactBrokerPassword: "O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1",
-  //   publishVerificationResult: true,
-  //   providerVersion: "1.0.0"
-  // });
 
   describe('send an event', () => {
     it('a book creation', () => {
